@@ -16,6 +16,7 @@
   grid-template-areas:
     ".";
   grid-area: side_bar;
+  background-color: rgb(34, 34, 34);
 }
 
 .main_card { grid-area: main_card; }
