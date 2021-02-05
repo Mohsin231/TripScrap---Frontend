@@ -201,5 +201,7 @@ function App() {
           </Row>
         </Container>
       </div>
-
+      </div>
+  )
+}
 export default App;
