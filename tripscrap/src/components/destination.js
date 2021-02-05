@@ -1,6 +1,6 @@
 import React from 'react';
 
-function destination() {
+function Destination() {
 
   return (
     <h1>destination</h1>
@@ -8,4 +8,4 @@ function destination() {
   
 }
 
-export default destination;
+export default Destination;

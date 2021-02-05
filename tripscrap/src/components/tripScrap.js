@@ -1,5 +1,5 @@
 import React, { useState, Component } from "react";
-import Data from "../components/data";
+import Data from "../components/Data";
 
 function TripScrap() {
   const [data, setData] = useState([]);
