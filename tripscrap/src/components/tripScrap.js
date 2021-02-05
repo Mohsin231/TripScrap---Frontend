@@ -1,13 +1,8 @@
 import React, {useState, Component} from 'react';
 import Data from '../components/data'
 
-class tripScrap extends Component{
-    render(){
-        return <div></div>
-    }
-}
 
-function tripScrap() {
+function TripScrap() {
 
     const [data,setData] = useState([]);
 
@@ -18,8 +13,9 @@ function tripScrap() {
 
   return (
     <h1>data</h1>
+
   );
   
 }
 
-export default tripScrap;
+export default TripScrap;

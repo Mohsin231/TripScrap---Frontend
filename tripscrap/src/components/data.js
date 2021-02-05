@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from 'react';
 
-function data(props) {
+function Data(props) {
 
     const [data, setData] = useState([])
 
+      
   return (
+
       <>
     <h1>data</h1>
 
@@ -15,4 +17,4 @@ function data(props) {
 
 }
 
-export default data;
+export default Data;

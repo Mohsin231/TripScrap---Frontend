@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import tripScrap from './components/tripScrap'
+import TripScrap from './components/tripScrap'
 import destination from './components/destination'
 
 
@@ -19,7 +19,7 @@ function App() {
       <div class="side_bar"></div>
       <div class="main_card">
 
-      <tripScrap/>
+      <TripScrap/>
 
       </div>
       
