@@ -1,13 +1,20 @@
 import "./App.css";
 
+import placeholder from "./placeholderimg.jpg";
+
 import "bootstrap/dist/css/bootstrap.min.css";
+
 import InputGroup from 'react-bootstrap/InputGroup';
 import FormControl from 'react-bootstrap/FormControl';
+import Card from 'react-bootstrap/Card';
+
 import Button from 'react-bootstrap/Button';
+
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+// import Col from 'react-bootstrap/Col';
 import Table from 'react-bootstrap/Table'
+
 
 
 // import { useState } from "react";
@@ -23,6 +30,9 @@ function App() {
     <div className="App">
       <div class="side_bar">
         <Container>
+          <Row>
+            <Button className="round-avatar"></Button>
+          </Row>
           <Row>
             <InputGroup className="mb-3">
               <FormControl
@@ -81,7 +91,87 @@ function App() {
           </Table>
         </Container>
       </div>
-      <div class="main_card"></div>
+      <div class="main_card">
+        <Container>
+          <Row>
+            <Card style={{ width: "18rem" }}>
+              <Card.Img variant="top" src={placeholder} />
+              <Card.Body>
+                <Card.Title>Chicago</Card.Title>
+                <Card.Text>
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </Card.Text>
+                <Button variant="primary">Button</Button>
+              </Card.Body>
+            </Card>
+
+            <Card style={{ width: "18rem" }}>
+              <Card.Img variant="top" src={placeholder} />
+              <Card.Body>
+                <Card.Title>Chicago</Card.Title>
+                <Card.Text>
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </Card.Text>
+                <Button variant="primary">Button</Button>
+              </Card.Body>
+            </Card>
+          </Row>
+
+          <Row>
+            <Card style={{ width: "18rem" }}>
+              <Card.Img variant="top" src={placeholder} />
+              <Card.Body>
+                <Card.Title>Chicago</Card.Title>
+                <Card.Text>
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </Card.Text>
+                <Button variant="primary">Button</Button>
+              </Card.Body>
+            </Card>
+
+            <Card style={{ width: "18rem" }}>
+              <Card.Img variant="top" src={placeholder} />
+              <Card.Body>
+                <Card.Title>Chicago</Card.Title>
+                <Card.Text>
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </Card.Text>
+                <Button variant="primary">Button</Button>
+              </Card.Body>
+            </Card>
+          </Row>
+
+          <Row>
+            <Card style={{ width: "18rem" }}>
+              <Card.Img variant="top" src={placeholder} />
+              <Card.Body>
+                <Card.Title>Chicago</Card.Title>
+                <Card.Text>
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </Card.Text>
+                <Button variant="primary">Button</Button>
+              </Card.Body>
+            </Card>
+
+            <Card style={{ width: "18rem" }}>
+              <Card.Img variant="top" src={placeholder} />
+              <Card.Body>
+                <Card.Title>Chicago</Card.Title>
+                <Card.Text>
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </Card.Text>
+                <Button variant="primary">Button</Button>
+              </Card.Body>
+            </Card>
+          </Row>
+        </Container>
+      </div>
     </div>
   );
 }

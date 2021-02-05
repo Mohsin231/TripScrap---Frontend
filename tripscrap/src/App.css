@@ -4,8 +4,15 @@
   grid-template-columns: 0.6fr 1fr;
   grid-template-rows: 1fr;
   gap: 0px 0px;
-  grid-template-areas:
-    "side_bar main_card";
+  grid-template-areas: "side_bar main_card";
+}
+
+.round-avatar {
+  width: 60px;
+  height: 60px;
+  padding: 20px 0px;
+  border-radius: 35px;
+  background-color: aliceblue;
 }
 
 .side_bar {
@@ -13,10 +20,12 @@
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   gap: 0px 0px;
-  grid-template-areas:
-    ".";
+  grid-template-areas: ".";
   grid-area: side_bar;
   background-color: rgb(34, 34, 34);
 }
 
-.main_card { grid-area: main_card; }
+.main_card {
+  grid-area: main_card;
+  background-color: rgb(230, 230, 230);
+}
