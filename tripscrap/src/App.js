@@ -16,6 +16,8 @@ function App() {
           <TripScrap />
         </div>
       </div>
+
+      <destination />
     </div>
   );
 }
