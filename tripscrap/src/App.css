@@ -1,5 +1,5 @@
 /* side bar and main bar */
-.grid-container {
+.App {
   display: grid;
   grid-template-columns: 0.6fr 1fr;
   grid-template-rows: 1fr;
@@ -7,6 +7,7 @@
   grid-template-areas:
     "side_bar main_card";
 }
+
 .side_bar {
   display: grid;
   grid-template-columns: 1fr;
@@ -16,4 +17,5 @@
     ".";
   grid-area: side_bar;
 }
+
 .main_card { grid-area: main_card; }

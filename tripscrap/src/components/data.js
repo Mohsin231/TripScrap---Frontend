@@ -1,18 +1,15 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from "react";
 
-function data(props) {
-
-    const [data, setData] = useState([])
+function Data(props) {
+  const [data, setData] = useState([]);
 
   return (
-      <>
-    <h1>data</h1>
+    <>
+      <h1>data</h1>
 
-    <button>Save</button>
-
+      <button>Save</button>
     </>
   );
-
 }
 
-export default data;
+export default Data;
