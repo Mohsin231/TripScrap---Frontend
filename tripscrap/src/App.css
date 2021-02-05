@@ -5,6 +5,15 @@
   grid-template-rows: 1fr;
   gap: 0px 0px;
   grid-template-areas: "side_bar main_card";
+  height: 100vh;
+}
+
+.adding-margin {
+  margin: 30px;
+}
+
+h3 {
+  color: rgb(235, 235, 235);
 }
 
 .round-avatar {
@@ -22,10 +31,24 @@
   gap: 0px 0px;
   grid-template-areas: ".";
   grid-area: side_bar;
-  background-color: rgb(34, 34, 34);
+  background-color: rgb(37, 37, 37);
 }
 
 .main_card {
   grid-area: main_card;
   background-color: rgb(230, 230, 230);
 }
+
+.table-todo {
+  background-color: rgb(240, 240, 240);
+}
+
+table.table-bordered > thead > tr > th{
+  border-bottom:2px solid red;
+}
+
+table.table-bordered > tbody > tr > td {
+  border-bottom:1.5px solid blue;
+}
+
+

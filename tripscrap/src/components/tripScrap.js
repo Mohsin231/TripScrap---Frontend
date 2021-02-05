@@ -1,15 +1,15 @@
-// import React, { useState, Component } from "react";
-// import Data from "../components/data";
+import React, { useState, Component } from "react";
+import Data from "../components/Data";
 
-// function TripScrap() {
-//   const [data, setData] = useState([]);
+function TripScrap() {
+  const [data, setData] = useState([]);
 
-//   const onClick = (e) => {
-//     e.preventDefault();
-//     console.log("button clicked");
-//   };
+  const onClick = (e) => {
+    e.preventDefault();
+    console.log("button clicked");
+  };
 
-//   return <h1>data</h1>;
-// }
+  return <h1>data</h1>;
+}
 
-// export default TripScrap;
+export default TripScrap;
