@@ -32,6 +32,8 @@ import "./App.css";
 // {/* <TripScrap /> */ }
 // {/* <Destination /> */}
 
+
+
 function App() {
   return (
     /*
@@ -199,8 +201,5 @@ function App() {
           </Row>
         </Container>
       </div>
-    </div>
-  );
-}
 
 export default App;
