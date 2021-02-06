@@ -35,6 +35,17 @@ import "./App.css";
 
 
 function App() {
+
+  // fetch(api_url)
+  // .then(res => {
+  //   object = res.data.whatever the data is
+  // })
+  // object = 
+  // function addData(object) {
+  //   axios.post(url, object)
+
+  // }
+
   return (
     /*
     
@@ -157,7 +168,8 @@ function App() {
                   Some quick example text to build on the card title and make up
                   the bulk of the card's content.
                 </Card.Text>
-                <Button variant="dark">Button</Button>
+                <Button variant="dark"> Button</Button>
+                {/* onClick = {() => addData() for buttons to addData function above return*/}
               </Card.Body>
             </Card>
 
