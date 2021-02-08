@@ -1,11 +1,12 @@
 import React from 'react';
 
-function Destination() {
+function Destination(props) {
+
 
   return (
-    <h1>destination</h1>
-  );
-  
+    <h1>{props.name}</h1>
+
+  )
 }
 
 export default Destination;
