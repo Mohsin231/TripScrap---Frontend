@@ -21,6 +21,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Table from "react-bootstrap/Table";
 import Form from "react-bootstrap/Form";
+import Destination from "./components/destination"
 
 import "./App.css";
 
@@ -64,6 +65,15 @@ const [formState, setFormState] = useState(initialState)
     // clear the form
     setFormState(initialState);
   };
+
+  const [destData, setDestData] = useState({name:"Will"})
+
+  function getDestData() {
+  const url = 'http://localhost:3001/'
+ fetch(url)
+   .then(res => res.json())
+   .then(data => setDestData(data))
+  }
   
   return (
     /*
@@ -90,6 +100,8 @@ const [formState, setFormState] = useState(initialState)
     */
 
     <div className="App">
+      <Destination name={destData.name}/>
+
       <div className="side_bar">
         {/*  the containers and rows are a part of bootstrap's layout (it's their version of flex)
              here is a link to the documentation for the layout:  https://react-bootstrap.github.io/layout/grid/ */}
@@ -135,7 +147,7 @@ const [formState, setFormState] = useState(initialState)
                 placeholder="Where do you want to go?"/>      
                 inputRef={ref => { formState.value = ref; }} 
                 <Button onClick ={() =>{console.log("button clicked.")}}   
-               variant="dark">Button</Button>
+               variant="dark">Search</Button>
               </Form.Group>
             </Form>
             </Row>
@@ -155,8 +167,11 @@ const [formState, setFormState] = useState(initialState)
                 type="text" 
                 placeholder="What you gonna do?"/>      
                 inputRef={ref => { formState.value = ref; }} 
-                <Button onClick ={() =>{console.log("button clicked.")}}   
-               variant="dark">Button</Button>
+
+                <Button variant="dark" onClick = {() =>{ getDestData() }}
+
+               >Button</Button>
+               
               </Form.Group>
             </Form>
             </Row>
