@@ -37,6 +37,7 @@ import "./App.css";
 
 
 function App() {
+
   const [dash, setDash] = useState(1)
   // const [history, setHistory] = useState([])
 
@@ -64,7 +65,6 @@ const [formState, setFormState] = useState(initialState)
     setFormState(initialState);
   };
   
-
   return (
     /*
     
@@ -212,7 +212,8 @@ const [formState, setFormState] = useState(initialState)
                   Some quick example text to build on the card title and make up
                   the bulk of the card's content.
                 </Card.Text>
-                <Button variant="dark">Button</Button>
+                <Button variant="dark"> Button</Button>
+                {/* onClick = {() => addData() for buttons to addData function above return*/}
               </Card.Body>
             </Card>
 
