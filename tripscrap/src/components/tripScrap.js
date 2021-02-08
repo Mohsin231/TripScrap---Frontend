@@ -2,7 +2,12 @@ import React, { useState, Component } from "react";
 import Data from "../components/Data";
 
 function TripScrap() {
-  const [data, setData] = useState([]);
+  const initialState = {
+    tripScrapName: '', 
+    whereAreYouGoing: '', 
+    todoList: '', 
+};
+  const [data, setData] = useState(initialState);
 
   const onClick = (e) => {
     e.preventDefault();
