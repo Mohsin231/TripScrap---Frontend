@@ -1,5 +1,8 @@
-import placeholder from "./placeholderimg.jpg"; // ignore this, this is just a placeholder image.
+import React, {useState, useEffect } from "react"
 
+import placeholder from "./placeholderimg.jpg"; 
+
+// ignore this, this is just a placeholder image.
 // here is the link for getting started with bootstrap: https://react-bootstrap.github.io/getting-started/introduction/
 
 // this is how you import bootstrap globally.
@@ -12,13 +15,12 @@ import placeholder from "./placeholderimg.jpg"; // ignore this, this is just a p
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import InputGroup from "react-bootstrap/InputGroup";
-import FormControl from "react-bootstrap/FormControl";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Table from "react-bootstrap/Table";
+import Form from "react-bootstrap/Form";
 
 import "./App.css";
 
@@ -36,16 +38,33 @@ import "./App.css";
 
 function App() {
 
-  // fetch(api_url)
-  // .then(res => {
-  //   object = res.data.whatever the data is
-  // })
-  // object = 
-  // function addData(object) {
-  //   axios.post(url, object)
+  const [dash, setDash] = useState(1)
+  // const [history, setHistory] = useState([])
 
-  // }
+  // const [isLoading, setIsLoading] = useState(true);
 
+  const loadMoreHistory = () => {
+    setDash(dash + 1);
+
+  };
+    const initialState = {
+    tripScrapName: '', 
+    whereAreYou: 'New York', 
+    todoList: '', 
+};
+const [formState, setFormState] = useState(initialState)
+
+  const handleChange = (event) => {
+    setFormState({formState, [event.target.id]: event.target.value });
+  }
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // do something with the data in the component state
+    console.log(formState);
+    // clear the form
+    setFormState(initialState);
+  };
+  
   return (
     /*
     
@@ -71,52 +90,77 @@ function App() {
     */
 
     <div className="App">
-      <div class="side_bar">
+      <div className="side_bar">
         {/*  the containers and rows are a part of bootstrap's layout (it's their version of flex)
              here is a link to the documentation for the layout:  https://react-bootstrap.github.io/layout/grid/ */}
 
         <Container>
           <Row className="adding-margin">
             {/* this below would be the avatar button that when click opens up the user modal (stretch goal) */}
+           
+           
+           
             <Button className="round-avatar"></Button>
           </Row>
 
           <Row className="adding-margin">
-            <h3>Tripscrap Name:</h3>
-
-            <InputGroup className="mb-3">
-              {/* this FormControl is where the user would input the name for their Tripscrap. Whatever the user
-            inputs here should be a saved value that shows up as the name of their Tripscrap above the cards.
-            event.target.value ??? */}
-              <FormControl
-                placeholder="What do you want your tripscrap name to be?"
-                aria-label="Tripscrap name"
-                aria-describedby="basic-addon2"
-              />
-
-              <InputGroup.Append>
-                <Button variant="dark">Button</Button>
-              </InputGroup.Append>
-            </InputGroup>
+          <Form onSubmit={handleSubmit}>
+              <Form.Group controlId ="tripscrap-name">
+                <h3>TripScrap Name:</h3>
+                <Form.Control 
+                value={formState.tripScrapName} 
+                onChange={handleChange} 
+                type="text" 
+                placeholder="TripScrap name goes here!"/>      
+                inputRef={ref => { formState.value = ref; }} 
+                <Button onClick ={() =>{console.log("button clicked.")}}   
+               variant="dark">Button</Button>
+              </Form.Group>
+            </Form>
+            
           </Row>
 
           <Row className="adding-margin">
-            <h3>Where are you going?</h3>
-            <InputGroup className="mb-3">
               {/* this FormControl below is where the user would input their todos. This would be where the main
             functionality goes (ie, whatever the user inputs here would link to our APIs and when entered 
             would show in both our Tripscrap Todo table below and render in the cards.) so our TripScrap component would
             go within here to run the functionality. */}
-              <FormControl
-                placeholder="Where do you want to go?"
-                aria-label="Tripscrap todo"
-                aria-describedby="basic-addon2"
-              />
-              <InputGroup.Append>
-                <Button variant="dark">Button</Button>
-              </InputGroup.Append>
-            </InputGroup>
-          </Row>
+            <Form onSubmit={handleSubmit}>
+              <Form.Group controlId ="destination">
+                <h3>Where are you goin??</h3>
+                <Form.Control 
+                value={formState.whereAreYou} 
+                onChange={handleChange} 
+                type="text" 
+                placeholder="Where do you want to go?"/>      
+                inputRef={ref => { formState.value = ref; }} 
+                <Button onClick ={() =>{console.log("button clicked.")}}   
+               variant="dark">Button</Button>
+              </Form.Group>
+            </Form>
+            </Row>
+
+          
+            <Row className="adding-margin">
+              {/* this FormControl below is where the user would input their todos. This would be where the main
+            functionality goes (ie, whatever the user inputs here would link to our APIs and when entered 
+            would show in both our Tripscrap Todo table below and render in the cards.) so our TripScrap component would
+            go within here to run the functionality. */}
+            <Form onSubmit={handleSubmit}>
+              <Form.Group controlId ="whatrudoing">
+                <h3>What are you going to do?</h3>
+                <Form.Control 
+                value={formState.toDoList} 
+                onChange={handleChange} 
+                type="text" 
+                placeholder="What you gonna do?"/>      
+                inputRef={ref => { formState.value = ref; }} 
+                <Button onClick ={() =>{console.log("button clicked.")}}   
+               variant="dark">Button</Button>
+              </Form.Group>
+            </Form>
+            </Row>
+
         </Container>
 
         <Container>
@@ -154,7 +198,7 @@ function App() {
         </Container>
       </div>
 
-      <div class="main_card">
+      <div className="main_card">
         <Container>
           <Row className="adding-margin">
             {/* these are the cards that would render the incoming information from the InputTodo above.
