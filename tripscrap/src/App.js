@@ -66,7 +66,7 @@ const [formState, setFormState] = useState(initialState)
     setFormState(initialState);
   };
 
-  const [destData, setDestData] = useState({name:"Will"})
+  const [destData, setDestData] = useState([])
 
   function getDestData() {
   const url = 'http://localhost:3001/'
@@ -74,7 +74,7 @@ const [formState, setFormState] = useState(initialState)
    .then(res => res.json())
    .then(data => setDestData(data))
   }
-  
+  console.log(destData)
   return (
     /*
     
