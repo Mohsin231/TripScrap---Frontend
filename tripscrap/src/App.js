@@ -59,8 +59,16 @@ function App() {
   const [destData, setDestData] = useState([]);
 
   function getDestData() {
-    const url = "http://localhost:3001/todos";
-    fetch(url)
+    const url = "http://localhost:3001/todos/formWhere";
+    fetch(url, {
+      method: "POST",
+      mode: "cors",
+      // mode: 'no-cors',
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ name: "Grab a slice of pizza" }),
+    })
       .then((res) => res.json())
       .then((res) => {
         setDestData(res.data);
@@ -68,6 +76,10 @@ function App() {
       })
       .catch((error) => console.error);
   }
+
+  // react, updating variable with react state/hooks
+  // function, set textbox text...
+  // sending back response, take that data on frontend .then set the new data to a setState variable or function in react (set destination data = to new response), map over those values
 
   useEffect(() => {
     getDestData();
@@ -118,6 +130,17 @@ function App() {
             would show in both our Tripscrap Todo table below and render in the cards.) so our TripScrap component would
             go within here to run the functionality. */}
             <Form onSubmit={handleSubmit}>
+              {/* {formState.map((formState, index) => (
+                <Form.Control
+                  key={index}
+                  action="/todos"
+                  method="POST"
+                  value={formState.whereAreYou}
+                  onChange={handleChange}
+                  type="text"
+                  placeholder="Where do you want to go?"
+                />
+              ))} */}
               <Form.Group controlId="destination">
                 <h3>Where are you goin??</h3>
                 <Form.Control
