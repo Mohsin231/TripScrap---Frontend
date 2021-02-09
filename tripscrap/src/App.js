@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import placeholder from "./placeholderimg.jpg";
 
@@ -36,13 +36,12 @@ import "./App.css";
 // {/* <Destination /> */}
 
 function App() {
-
   const initialState = {
     tripScrapName: "",
     whereAreYou: "",
     todoList: "",
   };
-  
+
   const [formState, setFormState] = useState(initialState);
 
   const handleChange = (event) => {
@@ -65,10 +64,14 @@ function App() {
       .then((res) => res.json())
       .then((res) => {
         setDestData(res.data);
+        console.log(res);
       })
-      .catch(console.error);
+      .catch((error) => console.error);
   }
-  console.log(destData);
+
+  useEffect(() => {
+    getDestData();
+  }, []);
 
   return (
     <div className="App">
