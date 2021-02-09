@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import placeholder from "./placeholderimg.jpg";
 
@@ -21,7 +21,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Table from "react-bootstrap/Table";
 import Form from "react-bootstrap/Form";
-import Destination from "./components/destination";
+// import Destination from "./components/destination";
 
 import "./App.css";
 
@@ -51,6 +51,7 @@ function App() {
   const handleChange = (event) => {
     setFormState({ formState, [event.target.id]: event.target.value });
   };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     // do something with the data in the component state
@@ -59,18 +60,21 @@ function App() {
     setFormState(initialState);
   };
 
-  const [destData, setDestData] = useState([])
+  const [destData, setDestData] = useState([]);
 
   function getDestData() {
-  const url = 'http://localhost:3001/'
- fetch(url)
-   .then(res => res.json())
-   .then(data => setDestData(data))
+    const url = "http://localhost:3001/todos";
+    fetch(url)
+      .then((res) => res.json())
+      .then((res) => {
+        setDestData(res.data);
+      })
+      .catch(console.error);
   }
-  console.log(destData)
+  console.log(destData);
+
   return (
     <div className="App">
-
       <div className="side_bar">
         {/*  the containers and rows are a part of bootstrap's layout (it's their version of flex)
              here is a link to the documentation for the layout:  https://react-bootstrap.github.io/layout/grid/ */}
@@ -117,6 +121,8 @@ function App() {
               <Form.Group controlId="destination">
                 <h3>Where are you goin??</h3>
                 <Form.Control
+                  action="/todos"
+                  method="POST"
                   value={formState.whereAreYou}
                   onChange={handleChange}
                   type="text"
@@ -126,12 +132,7 @@ function App() {
                 {(ref) => {
                   formState.value = ref;
                 }}
-                <Button
-                  onClick={() => {
-                    console.log("button clicked.");
-                  }}
-                  variant="dark"
-                >
+                <Button onClick={() => {}} variant="dark">
                   Search
                 </Button>
               </Form.Group>
