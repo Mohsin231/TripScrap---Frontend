@@ -36,16 +36,13 @@ import "./App.css";
 // {/* <Destination /> */}
 
 function App() {
-  // const [dash, setDash] = useState(1);
-  // const [history, setHistory] = useState([])
-  // const loadMoreHistory = () => {
-  //   setDash(dash + 1);
-  // };
+
   const initialState = {
     tripScrapName: "",
-    whereAreYou: "New York",
+    whereAreYou: "",
     todoList: "",
   };
+  
   const [formState, setFormState] = useState(initialState);
 
   const handleChange = (event) => {
@@ -128,10 +125,10 @@ function App() {
                   type="text"
                   placeholder="Where do you want to go?"
                 />
-                inputRef=
+                {/* inputRef=
                 {(ref) => {
                   formState.value = ref;
-                }}
+                }} */}
                 <Button onClick={() => {}} variant="dark">
                   Search
                 </Button>
