@@ -1,6 +1,6 @@
-import React, {useState, useEffect } from "react"
+import React, { useState, useEffect } from "react";
 
-import placeholder from "./placeholderimg.jpg"; 
+import placeholder from "./placeholderimg.jpg";
 
 // ignore this, this is just a placeholder image.
 // here is the link for getting started with bootstrap: https://react-bootstrap.github.io/getting-started/introduction/
@@ -21,7 +21,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Table from "react-bootstrap/Table";
 import Form from "react-bootstrap/Form";
-import Destination from "./components/destination"
+// import Destination from "./components/destination";
 
 import "./App.css";
 
@@ -35,29 +35,19 @@ import "./App.css";
 // {/* <TripScrap /> */ }
 // {/* <Destination /> */}
 
-
-
 function App() {
-
-  const [dash, setDash] = useState(1)
-  // const [history, setHistory] = useState([])
-
-  // const [isLoading, setIsLoading] = useState(true);
-
-  const loadMoreHistory = () => {
-    setDash(dash + 1);
-
+  const initialState = {
+    tripScrapName: "",
+    whereAreYou: "",
+    todoList: "",
   };
-    const initialState = {
-    tripScrapName: '', 
-    whereAreYou: 'New York', 
-    todoList: '', 
-};
-const [formState, setFormState] = useState(initialState)
+
+  const [formState, setFormState] = useState(initialState);
 
   const handleChange = (event) => {
-    setFormState({formState, [event.target.id]: event.target.value });
-  }
+    setFormState({ formState, [event.target.id]: event.target.value });
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     // do something with the data in the component state
@@ -66,42 +56,25 @@ const [formState, setFormState] = useState(initialState)
     setFormState(initialState);
   };
 
-  const [destData, setDestData] = useState([])
+  const [destData, setDestData] = useState([]);
 
   function getDestData() {
-  const url = 'http://localhost:3001/'
- fetch(url)
-   .then(res => res.json())
-   .then(data => setDestData(data))
+    const url = "http://localhost:3001/todos";
+    fetch(url)
+      .then((res) => res.json())
+      .then((res) => {
+        setDestData(res.data);
+        console.log(res);
+      })
+      .catch((error) => console.error);
   }
-  console.log(destData)
+
+  useEffect(() => {
+    getDestData();
+  }, []);
+
   return (
-    /*
-    
-    Below you're going to see a lot of different bootstrap elements. You're going to see these (there is a link to the documentation next to it for reference!)
-
-    > <Container> & <Row> | docs: https://react-bootstrap.github.io/layout/grid/ 
-
-    
-    > <Button> | docs: https://react-bootstrap.github.io/components/buttons/
-    
-
-
-    > <InputGroup> | docs: https://react-bootstrap.github.io/components/input-group/ 
-    
-
-
-    > <FormControl> | docs: https://react-bootstrap.github.io/components/forms/ 
-    
-
-
-    > <Table> | docs: https://react-bootstrap.github.io/components/table/ 
-    
-    */
-
     <div className="App">
-      <Destination name={destData.name}/>
-
       <div className="side_bar">
         {/*  the containers and rows are a part of bootstrap's layout (it's their version of flex)
              here is a link to the documentation for the layout:  https://react-bootstrap.github.io/layout/grid/ */}
@@ -109,73 +82,92 @@ const [formState, setFormState] = useState(initialState)
         <Container>
           <Row className="adding-margin">
             {/* this below would be the avatar button that when click opens up the user modal (stretch goal) */}
-           
-           
-           
+
             <Button className="round-avatar"></Button>
           </Row>
 
           <Row className="adding-margin">
-          <Form onSubmit={handleSubmit}>
-              <Form.Group controlId ="tripscrap-name">
+            <Form onSubmit={handleSubmit}>
+              <Form.Group controlId="tripscrap-name">
                 <h3>TripScrap Name:</h3>
-                <Form.Control 
-                value={formState.tripScrapName} 
-                onChange={handleChange} 
-                type="text" 
-                placeholder="TripScrap name goes here!"/>      
-                inputRef={ref => { formState.value = ref; }} 
-                <Button onClick ={() =>{console.log("button clicked.")}}   
-               variant="dark">Button</Button>
+                <Form.Control
+                  value={formState.tripScrapName}
+                  onChange={handleChange}
+                  type="text"
+                  placeholder="TripScrap name goes here!"
+                />
+                inputRef=
+                {(ref) => {
+                  formState.value = ref;
+                }}
+                <Button
+                  onClick={() => {
+                    console.log("button clicked.");
+                  }}
+                  variant="dark"
+                >
+                  Button
+                </Button>
               </Form.Group>
             </Form>
-            
           </Row>
 
           <Row className="adding-margin">
-              {/* this FormControl below is where the user would input their todos. This would be where the main
+            {/* this FormControl below is where the user would input their todos. This would be where the main
             functionality goes (ie, whatever the user inputs here would link to our APIs and when entered 
             would show in both our Tripscrap Todo table below and render in the cards.) so our TripScrap component would
             go within here to run the functionality. */}
             <Form onSubmit={handleSubmit}>
-              <Form.Group controlId ="destination">
+              <Form.Group controlId="destination">
                 <h3>Where are you goin??</h3>
-                <Form.Control 
-                value={formState.whereAreYou} 
-                onChange={handleChange} 
-                type="text" 
-                placeholder="Where do you want to go?"/>      
-                inputRef={ref => { formState.value = ref; }} 
-                <Button onClick ={() =>{console.log("button clicked.")}}   
-               variant="dark">Search</Button>
+                <Form.Control
+                  action="/todos"
+                  method="POST"
+                  value={formState.whereAreYou}
+                  onChange={handleChange}
+                  type="text"
+                  placeholder="Where do you want to go?"
+                />
+                {/* inputRef=
+                {(ref) => {
+                  formState.value = ref;
+                }} */}
+                <Button onClick={() => {}} variant="dark">
+                  Search
+                </Button>
               </Form.Group>
             </Form>
-            </Row>
+          </Row>
 
-          
-            <Row className="adding-margin">
-              {/* this FormControl below is where the user would input their todos. This would be where the main
+          <Row className="adding-margin">
+            {/* this FormControl below is where the user would input their todos. This would be where the main
             functionality goes (ie, whatever the user inputs here would link to our APIs and when entered 
             would show in both our Tripscrap Todo table below and render in the cards.) so our TripScrap component would
             go within here to run the functionality. */}
             <Form onSubmit={handleSubmit}>
-              <Form.Group controlId ="whatrudoing">
+              <Form.Group controlId="whatrudoing">
                 <h3>What are you going to do?</h3>
-                <Form.Control 
-                value={formState.toDoList} 
-                onChange={handleChange} 
-                type="text" 
-                placeholder="What you gonna do?"/>      
-                inputRef={ref => { formState.value = ref; }} 
-
-                <Button variant="dark" onClick = {() =>{ getDestData() }}
-
-               >Button</Button>
-               
+                <Form.Control
+                  value={formState.toDoList}
+                  onChange={handleChange}
+                  type="text"
+                  placeholder="What you gonna do?"
+                />
+                inputRef=
+                {(ref) => {
+                  formState.value = ref;
+                }}
+                <Button
+                  variant="dark"
+                  onClick={() => {
+                    getDestData();
+                  }}
+                >
+                  Button
+                </Button>
               </Form.Group>
             </Form>
-            </Row>
-
+          </Row>
         </Container>
 
         <Container>
@@ -272,7 +264,7 @@ const [formState, setFormState] = useState(initialState)
           </Row>
         </Container>
       </div>
-      </div>
-  )
+    </div>
+  );
 }
 export default App;
