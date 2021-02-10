@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
+
 import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 import TripScrapName from "./TripScrapName";
+
 import TripScrapToDoTable from "./TripScrapToDoTable";
 import DestinationForm from "./DestinationForm";
 

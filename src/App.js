@@ -1,7 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import Container from "react-bootstrap/Container";
-import Button from "react-bootstrap/Button";
-import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/esm/Container";
+import Button from "react-bootstrap/esm/Button";
+import Row from "react-bootstrap/esm/Row";
 import "./App.css";
 
 import TripScrapName from "./components/TripScrapName";
