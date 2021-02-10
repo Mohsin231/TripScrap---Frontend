@@ -2,121 +2,61 @@ import React, { useState, useEffect } from "react";
 import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import TripScrapToDoTable from "./TripScrapToDoTable";
 
 export default function TodoForm() {
-  const [title, setTitle] = useState("");
+  const [title, setTitle] = useState([]);
   const [complete, setComplete] = useState(false);
 
   const onChangeTitle = (event) => {
     setTitle({ title: event.target.value });
   };
 
-    const url = "http://localhost:3001/todos/newTask"
-    
-    const onSubmit = (event) => {
-        event.preventDefault();
-        const tripscrapSchema = {
-            title: title,
-        };
-        console.log(tripscrapSchema);
+  const [taskData, setTaskData] = useState([]);
 
-            fetch(url, {
-                method: "POST",
-                body: JSON.stringify(tripscrapSchema),
-                mode: "cors",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            })
-                .then((res) => {
-                    console.log(res.data);
-                    setTitle(title);
-                })
-                .catch((error) => {
-                    console.log(error);
-                })
-                // setComplete(true);
-    }
+  function getTripTasks() {
+    const url = "http://localhost:3001/todos";
+    fetch(url)
+      .then((res) => res.json())
+      .then((res) => {
+        setTaskData(res);
+        console.log(res);
+      })
+      .catch((error) => console.error);
+  }
+  // console.log(taskData)
 
-  //   function postNewTask() {
-  //     const url = "http://localhost:3001/todos/newTask";
-  //     fetch(url, {
-  //       method: "POST",
-  //       mode: "cors",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify(),
-  //     }).then((res) => {
-  //       setTaskData(res.data);
-  //       console.log(res.data);
-  //     });
-  //   }
+  useEffect(() => {
+    getTripTasks();
+  }, []);
 
-  //   const [taskData, setTaskData] = useState([]);
+  // console.log(getTripTasks);
 
-  //   function getTripTasks() {
-  //     const url = "http://localhost:3001/todos";
-  //     fetch(url)
-  //       .then((res) => {
-  //         setTaskData(res.data);
-  //       })
-  //       .catch((error) => console.error);
-  //   }
+  const url = "http://localhost:3001/todos/";
 
-  //   useEffect(() => {
-  //     getTripTasks();
-  //   }, []);
+  const onSubmit = (event) => {
+    event.preventDefault();
+    const tripscrapSchema = {
+      title: title,
+    };
+    console.log(title);
 
-  //   console.log(getTripTasks);
-
-  //   // function postNewTask() {
-  //   //       const url = "http://localhost:3001/todos/newTask";
-  //   //       fetch(url)
-  //   //         .then((res) => {
-  //   //           setTaskData(res.body);
-  //   //           console.log(res);
-  //   //         })
-  //   //         .catch((error) => console.error);
-  //   // }
-
-  //   //   const [taskData, setTaskData] = useState([]);
-
-  //   function postNewTask() {
-  //     const url = "http://localhost:3001/todos/newTask";
-  //     fetch(url, {
-  //       method: "POST",
-  //       mode: "cors",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify(),
-  //     }).then((res) => {
-  //       setTaskData(res.data);
-  //       console.log(res.data);
-  //     });
-  //   }
-
-  //   useEffect(() => {
-  //     postNewTask();
-  //   }, []);
-
-  // function getTripTasks() {
-  //   const url = "http://localhost:3001/todos";
-  //   fetch(url, {
-  //     method: "GET",
-  //     mode: "cors",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({}),
-  //   })
-  //     .then((res) => {
-  //       setTaskData(res.data);
-  //       console.log(res);
-  //     })
-  //     .catch((error) => console.error);
-  // }
+    fetch(url, {
+      method: "POST",
+      body: JSON.stringify(title),
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => {
+        setTitle(title);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    getTripTasks();
+  };
 
   return (
     <div>
@@ -135,6 +75,8 @@ export default function TodoForm() {
           </Form.Group>
         </Form>
       </Row>
+
+      <TripScrapToDoTable taskData={taskData} />
     </div>
   );
 }

@@ -7,7 +7,6 @@ import "./App.css";
 import TripScrapName from "./components/TripScrapName";
 import DestinationForm from "./components/DestinationForm";
 import TodoForm from "./components/TodoForm";
-import TripScrapToDoTable from "./components/TripScrapToDoTable";
 import TripScrapCards from "./components/TripScrapCards";
 
 function App() {
@@ -27,8 +26,8 @@ function App() {
         </Container>
 
         <Container>
-          <TripScrapToDoTable />
         </Container>
+      
       </div>
 
       <div className="main_card">

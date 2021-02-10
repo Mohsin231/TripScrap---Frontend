@@ -93,3 +93,83 @@ const initialState = {
   //     })
   //     .catch((error) => console.error);
   // }
+
+    //   function postNewTask() {
+  //     const url = "http://localhost:3001/todos/newTask";
+  //     fetch(url, {
+  //       method: "POST",
+  //       mode: "cors",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(),
+  //     }).then((res) => {
+  //       setTaskData(res.data);
+  //       console.log(res.data);
+  //     });
+  //   }
+
+  //   const [taskData, setTaskData] = useState([]);
+
+  //   function getTripTasks() {
+  //     const url = "http://localhost:3001/todos";
+  //     fetch(url)
+  //       .then((res) => {
+  //         setTaskData(res.data);
+  //       })
+  //       .catch((error) => console.error);
+  //   }
+
+  //   useEffect(() => {
+  //     getTripTasks();
+  //   }, []);
+
+  //   console.log(getTripTasks);
+
+  //   // function postNewTask() {
+  //   //       const url = "http://localhost:3001/todos/newTask";
+  //   //       fetch(url)
+  //   //         .then((res) => {
+  //   //           setTaskData(res.body);
+  //   //           console.log(res);
+  //   //         })
+  //   //         .catch((error) => console.error);
+  //   // }
+
+  //   //   const [taskData, setTaskData] = useState([]);
+
+  //   function postNewTask() {
+  //     const url = "http://localhost:3001/todos/newTask";
+  //     fetch(url, {
+  //       method: "POST",
+  //       mode: "cors",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(),
+  //     }).then((res) => {
+  //       setTaskData(res.data);
+  //       console.log(res.data);
+  //     });
+  //   }
+
+  //   useEffect(() => {
+  //     postNewTask();
+  //   }, []);
+
+  // function getTripTasks() {
+  //   const url = "http://localhost:3001/todos";
+  //   fetch(url, {
+  //     method: "GET",
+  //     mode: "cors",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({}),
+  //   })
+  //     .then((res) => {
+  //       setTaskData(res.data);
+  //       console.log(res);
+  //     })
+  //     .catch((error) => console.error);
+  // }

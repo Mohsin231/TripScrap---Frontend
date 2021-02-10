@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import Table from 'react-bootstrap/Table';
+import React, { useState, useEffect } from "react";
+import Table from "react-bootstrap/Table";
 
-
-export default function TripScrapToDoTable() {
-
+export default function TripScrapToDoTable(props) {
+  const findTodo = props.taskData.map((task) => {
     return (
       <div>
         <Table bordered hover className="table-todo">
@@ -14,13 +13,13 @@ export default function TripScrapToDoTable() {
           </thead>
           <tbody>
             <tr>
-              <td>tripscrap todo placeholder!</td>
-            </tr>
-            <tr>
-              <td>tripscrap todo placeholder!</td>
+              <td>{task.title}</td>
             </tr>
           </tbody>
         </Table>
       </div>
     );
+  });
+
+  return <div>{findTodo}</div>;
 }
