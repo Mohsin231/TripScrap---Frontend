@@ -10,22 +10,16 @@ import TodoForm from "./components/TodoForm";
 import TripScrapCards from "./components/TripScrapCards";
 
 function App() {
-  return ( 
+  return (
     <div className="App">
-
       <div className="side_bar">
         <Container>
-
           <Row className="adding-margin">
             <Button className="round-avatar"></Button>
           </Row>
-
           <TodoForm />
-
         </Container>
-      
       </div>
-
       <div className="main_card">
         <Container>
           <Row className="adding-margin">
