@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# TripScrap---A Trip Planning Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Development Team**
 
-## Available Scripts
+**SCRUM Leader:** Michelle Gude 
+**Git Master:** Mohsin Ahmed 
+**Task Manager:** Britney Ruotolo 
 
-In the project directory, you can run:
+**What is TripScrap?**
+Think of it as a place to organize your upcoming journey to a new destination. 
+TripScrap is a full-stack web application used to manage and create user “TripScraps” or virtual trip itineraries. 
+The app allows users to put their itineraries into an organized dashboard, where they will also be given suggested experiences to add to their list in the form of cards.
 
-### `npm start`
+**About**
+TripScrap was created using the MERN stack which is comprised of MongoDb, Mongoose, Express, REACT, and Node.js. The app was also stylized using HTML, CSS, and Bootstrap.  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+**Deployment**
+When trying to deploy our backend to Heroku we were faced with an NPM Err message. After troubleshooting and updating our "scripts: start" we were able to resolve part of the error and get the application deployed. Unfortunately, we were met with an additional error on the heroku web application via the browser.  
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**User Experience**
+The TripScrap dashboard is really the shining star of this application. It a space for the user to organize their trip before they go. The user can create their own TripScrap todo list item, and save it to their TripScrap todo list. If the user wants to get rid of their task, they can click on the delete button attached to their corresponding todo list item.  
 
-### `npm test`
+**Obstacles**
+Our team was met with many challenges when trying to save user data to the backend TripScrap API.
+We were able to save data locally and display it through localhost:3001/todos. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Creating the App from the Ground Up**
+This application has full CRUD functionality, allowing the user to Create, Read, 
+Update and Delete their todos even after refreshing the application in the browser. 
+Client side rendering was handled using REACT.js 
+Routes were created inside the controllers directory within the backend API of our application using Express. The Schema for our routes were created using Mongoose. 
+Client side functionality was produced via representational state(via Restful API).
 
-### `npm run build`
+**User Stories**
+As a user, I want to create my own TripScrap todo. 
+As a user, I want to save my TripScrap todo list on my dashboard
+As a user, I want to explore things to do
+As a user, I want to see pictures of the places I'll be visiting
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**User Stretch Goals** 
+As user, I want to share my todo list with friends/family
+As a user, I want a feature implemented to help me decide where to eat
+As a user, I want a geolocation feature of where I am and nearby places I can visit
+As a user, I want to explore options of flights, hotels, and vacation homes
+As a user, I want to have a weather forecast feature
+As a user, I want to be able to book services (restaurants, hotels, tours, etc.)
+As a user, I want to be able to have reviews and ratings of the places I want to visit
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
