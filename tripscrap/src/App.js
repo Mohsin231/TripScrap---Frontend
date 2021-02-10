@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import Container from "react-bootstrap/Container";
+import Button from "react-bootstrap/Button";
+import Row from "react-bootstrap/Row";
+import "./App.css";
+
+import TripScrapName from "./components/TripScrapName";
+import DestinationForm from "./components/DestinationForm";
+import TodoForm from "./components/TodoForm";
+import TripScrapCards from "./components/TripScrapCards";
 
 function App() {
-  return (
+  return ( 
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <div className="side_bar">
+        <Container>
+
+          <Row className="adding-margin">
+            <Button className="round-avatar"></Button>
+          </Row>
+
+          <TodoForm />
+
+        </Container>
+      
+      </div>
+
+      <div className="main_card">
+        <Container>
+          <Row className="adding-margin">
+            <TripScrapCards />
+          </Row>
+        </Container>
+      </div>
     </div>
   );
 }
-
 export default App;

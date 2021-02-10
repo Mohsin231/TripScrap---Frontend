@@ -1,38 +1,54 @@
+/* side bar and main bar */
 .App {
-  text-align: center;
+  display: grid;
+  grid-template-columns: 0.6fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: "side_bar main_card";
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.adding-margin {
+  margin: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h3 {
+  color: rgb(235, 235, 235);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.round-avatar {
+  width: 60px;
+  height: 60px;
+  padding: 20px 0px;
+  border-radius: 35px;
+  background-color: aliceblue;
 }
 
-.App-link {
-  color: #61dafb;
+.side_bar {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-template-areas: ".";
+  grid-area: side_bar;
+  background-color: rgb(37, 37, 37);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main_card {
+  grid-area: main_card;
+  background-color: rgb(230, 230, 230);
 }
+
+.table-todo {
+  background-color: rgb(240, 240, 240);
+}
+
+table.table-bordered > thead > tr > th{
+  border-bottom:2px solid red;
+}
+
+table.table-bordered > tbody > tr > td {
+  border-bottom:1.5px solid blue;
+}
+
+
