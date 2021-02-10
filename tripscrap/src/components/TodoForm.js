@@ -6,10 +6,17 @@ import TripScrapToDoTable from "./TripScrapToDoTable";
 
 export default function TodoForm() {
   const [title, setTitle] = useState([]);
-  const [complete, setComplete] = useState(false);
 
   const onChangeTitle = (event) => {
     setTitle({ title: event.target.value });
+  };
+
+  const [selectTaskData, setSelect] = useState({});
+
+  const handleUpdate = (event, taskData) => {
+    event.preventDefault();
+    const updatedTask = { ...taskData, title: event.target.value };
+    updateTodo(updatedTask);
   };
 
   const [taskData, setTaskData] = useState([]);
@@ -32,14 +39,11 @@ export default function TodoForm() {
 
   // console.log(getTripTasks);
 
-  const url = "http://localhost:3001/todos/";
+  // fetch call that has create functionality :
+  const url = "http://localhost:3001/todos";
 
-  const onSubmit = (event) => {
+  const createTodo = (event) => {
     event.preventDefault();
-    const tripscrapSchema = {
-      title: title,
-    };
-    console.log(title);
 
     fetch(url, {
       method: "POST",
@@ -58,10 +62,24 @@ export default function TodoForm() {
     getTripTasks();
   };
 
+  const deleteTodo = (taskData) => {
+    fetch(`${url}/${taskData._id}`, {
+      method: "DELETE",
+    }).then((res) => getTripTasks());
+  };
+  console.log(taskData._id);
+
+  const updateTodo = (taskData) => {
+    fetch(`${url}/${taskData._id}`, {
+      method: "PUT",
+      body: JSON.stringify(title),
+    }).then((res) => getTripTasks());
+  };
+
   return (
     <div>
       <Row className="adding-margin">
-        <Form onSubmit={onSubmit}>
+        <Form onSubmit={createTodo}>
           <Form.Group controlId="whatrudoing">
             <h3>What are you going to do there?</h3>
             <Form.Control
@@ -76,7 +94,31 @@ export default function TodoForm() {
         </Form>
       </Row>
 
-      <TripScrapToDoTable taskData={taskData} />
+      <Row className="adding-margin">
+        <Form onSubmit={handleUpdate}>
+          <Form.Group controlId="updateTodo">
+            <h3>What would you like to update?</h3>
+            <Form.Control
+              type="title"
+              //   handleChange={handleUpdate}
+              placeholder="Update plans here."
+            />
+            <Button
+              onClick={() => {
+                updateTodo();
+              }}
+            >
+              Update
+            </Button>
+          </Form.Group>
+        </Form>
+      </Row>
+
+      <TripScrapToDoTable
+        title={title}
+        deleteTodo={deleteTodo}
+        taskData={taskData}
+      />
     </div>
   );
 }

@@ -12,8 +12,10 @@ import TripScrapCards from "./components/TripScrapCards";
 function App() {
   return ( 
     <div className="App">
+
       <div className="side_bar">
         <Container>
+          
           <Row className="adding-margin">
             <Button className="round-avatar"></Button>
           </Row>
@@ -23,9 +25,7 @@ function App() {
           <DestinationForm />
 
           <TodoForm />
-        </Container>
 
-        <Container>
         </Container>
       
       </div>
