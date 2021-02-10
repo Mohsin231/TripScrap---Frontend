@@ -12,20 +12,16 @@ import TripScrapCards from "./components/TripScrapCards";
 function App() {
   return ( 
     <div className="App">
+
       <div className="side_bar">
         <Container>
+
           <Row className="adding-margin">
             <Button className="round-avatar"></Button>
           </Row>
 
-          <TripScrapName />
-
-          <DestinationForm />
-
           <TodoForm />
-        </Container>
 
-        <Container>
         </Container>
       
       </div>
