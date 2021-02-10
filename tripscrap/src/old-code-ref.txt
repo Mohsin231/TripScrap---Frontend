@@ -1,0 +1,175 @@
+
+const initialState = {
+    tripScrapName: "",
+    whereAreYou: "",
+    todoList: "",
+  };
+
+  const [formState, setFormState] = useState(initialState);
+
+  const handleChange = (event) => {
+    setFormState({ formState, [event.target.id]: event.target.value });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // do something with the data in the component state
+    console.log(formState);
+    // clear the form
+    setFormState(initialState);
+  };
+
+  // react, updating variable with react state/hooks
+  // function, set textbox text...
+  // sending back response, take that data on frontend .then set the new data to a setState variable or function in react (set destination data = to new response), map over those values
+
+  // const [destData, setDestData] = useState([]);
+
+  const [taskData, setTaskData] = useState([]);
+
+  function getTripTasks() {
+    const url = "http://localhost:3001/todos";
+    fetch(url)
+      .then((res) => {
+        setTaskData(res.data);
+      })
+      .catch((error) => console.error);
+  }
+
+  useEffect(() => {
+    getTripTasks();
+  }, []);
+    
+  console.log(getTripTasks)
+
+  // function postNewTask() {
+  //       const url = "http://localhost:3001/todos/newTask";
+  //       fetch(url)
+  //         .then((res) => {
+  //           setTaskData(res.body);
+  //           console.log(res);
+  //         })
+  //         .catch((error) => console.error);
+  // }
+
+//   const [taskData, setTaskData] = useState([]);
+
+  function postNewTask() {
+    const url = "http://localhost:3001/todos/newTask";
+    fetch(url, {
+      method: "POST",
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(),
+    }).then((res) => {
+      setTaskData(res.data);
+      console.log(res.data);
+    });
+  }
+
+  useEffect(() => {
+    postNewTask();
+  }, []);
+
+  // useEffect(() => {
+  //   getDestData();
+  // }, []);
+
+  // function getTripTasks() {
+  //   const url = "http://localhost:3001/todos";
+  //   fetch(url, {
+  //     method: "GET",
+  //     mode: "cors",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({}),
+  //   })
+  //     .then((res) => {
+  //       setTaskData(res.data);
+  //       console.log(res);
+  //     })
+  //     .catch((error) => console.error);
+  // }
+
+    //   function postNewTask() {
+  //     const url = "http://localhost:3001/todos/newTask";
+  //     fetch(url, {
+  //       method: "POST",
+  //       mode: "cors",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(),
+  //     }).then((res) => {
+  //       setTaskData(res.data);
+  //       console.log(res.data);
+  //     });
+  //   }
+
+  //   const [taskData, setTaskData] = useState([]);
+
+  //   function getTripTasks() {
+  //     const url = "http://localhost:3001/todos";
+  //     fetch(url)
+  //       .then((res) => {
+  //         setTaskData(res.data);
+  //       })
+  //       .catch((error) => console.error);
+  //   }
+
+  //   useEffect(() => {
+  //     getTripTasks();
+  //   }, []);
+
+  //   console.log(getTripTasks);
+
+  //   // function postNewTask() {
+  //   //       const url = "http://localhost:3001/todos/newTask";
+  //   //       fetch(url)
+  //   //         .then((res) => {
+  //   //           setTaskData(res.body);
+  //   //           console.log(res);
+  //   //         })
+  //   //         .catch((error) => console.error);
+  //   // }
+
+  //   //   const [taskData, setTaskData] = useState([]);
+
+  //   function postNewTask() {
+  //     const url = "http://localhost:3001/todos/newTask";
+  //     fetch(url, {
+  //       method: "POST",
+  //       mode: "cors",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(),
+  //     }).then((res) => {
+  //       setTaskData(res.data);
+  //       console.log(res.data);
+  //     });
+  //   }
+
+  //   useEffect(() => {
+  //     postNewTask();
+  //   }, []);
+
+  // function getTripTasks() {
+  //   const url = "http://localhost:3001/todos";
+  //   fetch(url, {
+  //     method: "GET",
+  //     mode: "cors",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({}),
+  //   })
+  //     .then((res) => {
+  //       setTaskData(res.data);
+  //       console.log(res);
+  //     })
+  //     .catch((error) => console.error);
+  // }
