@@ -20,6 +20,9 @@ When trying to deploy our backend to Heroku we were faced with an NPM Err messag
 **User Experience**
 The TripScrap dashboard is really the shining star of this application. It a space for the user to organize their trip before they go. The user can create their own TripScrap todo list item, and save it to their TripScrap todo list. If the user wants to get rid of their task, they can click on the delete button attached to their corresponding todo list item.  
 
+**Component Heirarchy**
+![ComponentHierarchy](https://i.ibb.co/3WFVtH9/2021-02-10-01-58-49-Trip-Scrap-Figma.png)
+
 **Obstacles**
 Our team was met with many challenges when trying to save user data to the backend TripScrap API.
 We were able to save data locally and display it through localhost:3001/todos. 
