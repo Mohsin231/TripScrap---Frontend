@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Table from "react-bootstrap/Table";
+import Table from "react-bootstrap/esm/Table";
 
 export default function TripScrapToDoTable(props) {
   const findTodo = props.taskData.map((task) => {

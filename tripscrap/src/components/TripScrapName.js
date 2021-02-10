@@ -1,6 +1,6 @@
-import Row from 'react-bootstrap/Row'
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
+import Row from 'react-bootstrap/esm/Row'
+import Form from 'react-bootstrap/esm/Form'
+import Button from 'react-bootstrap/esm/Button'
 
 export default function TripScrapName() {
   
