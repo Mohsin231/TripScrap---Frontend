@@ -15,14 +15,10 @@ function App() {
 
       <div className="side_bar">
         <Container>
-          
+
           <Row className="adding-margin">
             <Button className="round-avatar"></Button>
           </Row>
-
-          <TripScrapName />
-
-          <DestinationForm />
 
           <TodoForm />
 

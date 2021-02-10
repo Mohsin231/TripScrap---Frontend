@@ -7,7 +7,6 @@ export default function TripScrapToDoTable({
   title,
   taskData,
   deleteTodo,
-  updateTodo,
 }) {
   const findTodo = taskData.map((task) => {
     return (

@@ -2,7 +2,11 @@ import React, { useState, useEffect } from "react";
 import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+
+import TripScrapName from "./TripScrapName";
 import TripScrapToDoTable from "./TripScrapToDoTable";
+import DestinationForm from "./DestinationForm";
+
 
 export default function TodoForm() {
   const [title, setTitle] = useState([]);
@@ -11,8 +15,14 @@ export default function TodoForm() {
     setTitle({ title: event.target.value });
   };
 
-  const [selectTaskData, setSelect] = useState({});
+    const [initialName, setName] = useState("");
+    
+    const changeName = (event) => {
+        setName(event.target.value);
+        console.log(setName);
+    }
 
+    
   const handleUpdate = (event, taskData) => {
     event.preventDefault();
     const updatedTask = { ...taskData, title: event.target.value };
@@ -77,7 +87,14 @@ export default function TodoForm() {
   };
 
   return (
-    <div>
+      <div>
+
+          
+          <TripScrapName name={initialName} changeName={changeName}/>
+
+          <DestinationForm />
+
+          
       <Row className="adding-margin">
         <Form onSubmit={createTodo}>
           <Form.Group controlId="whatrudoing">
