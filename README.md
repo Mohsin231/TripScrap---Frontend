@@ -35,19 +35,19 @@ Routes were created inside the controllers directory within the backend API of o
 Client side functionality was produced via representational state(via Restful API).
 
 **User Stories**
-*As a user, I want to create my own TripScrap todo. 
-*As a user, I want to save my TripScrap todo list on my dashboard
-*As a user, I want to explore things to do
-*As a user, I want to see pictures of the places I'll be visiting
+* As a user, I want to create my own TripScrap todo. 
+* As a user, I want to save my TripScrap todo list on my dashboard
+* As a user, I want to explore things to do
+* As a user, I want to see pictures of the places I'll be visiting
 
 **User Stretch Goals** 
-*As user, I want to share my todo list with friends/family
-*As a user, I want a feature implemented to help me decide where to eat
-*As a user, I want a geolocation feature of where I am and nearby places I can visit
-*As a user, I want to explore options of flights, hotels, and vacation homes
-*As a user, I want to have a weather forecast feature
-*As a user, I want to be able to book services (restaurants, hotels, tours, etc.)
-*As a user, I want to be able to have reviews and ratings of the places I want to visit
+* As user, I want to share my todo list with friends/family
+* As a user, I want a feature implemented to help me decide where to eat
+* As a user, I want a geolocation feature of where I am and nearby places I can visit
+* As a user, I want to explore options of flights, hotels, and vacation homes
+* As a user, I want to have a weather forecast feature
+* As a user, I want to be able to book services (restaurants, hotels, tours, etc.)
+* As a user, I want to be able to have reviews and ratings of the places I want to visit
 
 
 
