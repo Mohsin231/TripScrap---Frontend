@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/TripScrap---Frontend/static/css/main.ae61830a.chunk.css",
+    "main.js": "/TripScrap---Frontend/static/js/main.332b88e3.chunk.js",
+    "main.js.map": "/TripScrap---Frontend/static/js/main.332b88e3.chunk.js.map",
+    "runtime-main.js": "/TripScrap---Frontend/static/js/runtime-main.1d70380d.js",
+    "runtime-main.js.map": "/TripScrap---Frontend/static/js/runtime-main.1d70380d.js.map",
+    "static/css/2.150d169a.chunk.css": "/TripScrap---Frontend/static/css/2.150d169a.chunk.css",
+    "static/js/2.04f2b793.chunk.js": "/TripScrap---Frontend/static/js/2.04f2b793.chunk.js",
+    "static/js/2.04f2b793.chunk.js.map": "/TripScrap---Frontend/static/js/2.04f2b793.chunk.js.map",
+    "index.html": "/TripScrap---Frontend/index.html",
+    "static/css/2.150d169a.chunk.css.map": "/TripScrap---Frontend/static/css/2.150d169a.chunk.css.map",
+    "static/css/main.ae61830a.chunk.css.map": "/TripScrap---Frontend/static/css/main.ae61830a.chunk.css.map",
+    "static/js/2.04f2b793.chunk.js.LICENSE.txt": "/TripScrap---Frontend/static/js/2.04f2b793.chunk.js.LICENSE.txt",
+    "static/media/placeholderimg.6333e01e.jpg": "/TripScrap---Frontend/static/media/placeholderimg.6333e01e.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1d70380d.js",
+    "static/css/2.150d169a.chunk.css",
+    "static/js/2.04f2b793.chunk.js",
+    "static/css/main.ae61830a.chunk.css",
+    "static/js/main.332b88e3.chunk.js"
+  ]
+}
