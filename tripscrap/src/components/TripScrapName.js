@@ -1,8 +1,11 @@
-import Row from 'react-bootstrap/esm/Row'
-import Form from 'react-bootstrap/esm/Form'
-import Button from 'react-bootstrap/esm/Button'
+import React, { useState, useEffect } from 'react';
 
-export default function TripScrapName() {
+import Row from 'react-bootstrap/Row'
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
+
+
+export default function TripScrapName({initialName, changeName}) {
   
 
   return (
@@ -11,10 +14,12 @@ export default function TripScrapName() {
         <Form.Group controlId="tripscrap-name">
           <h3>TripScrap Name:</h3>
           <Form.Control
+            onChange={changeName}
+            value={initialName}
             type="text"
             placeholder="Put name here."
           />
-          <Button variant="dark">Button</Button>
+          <Button onClick={changeName}variant="dark">Button</Button>
         </Form.Group>
       </Form>
     </Row>
